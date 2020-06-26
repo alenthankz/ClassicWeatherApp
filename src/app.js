@@ -7,7 +7,7 @@ var publicPath = path.join(__dirname,'../public');
 var viewPath   = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
-
+const port=process.env.PORT  || 3000 ;
 
 const app = express();
 app.set('view engine','hbs')
@@ -47,7 +47,7 @@ app.get('*',(req,res)=>{
         title:'page not found'
     })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server listening');
 })
 
